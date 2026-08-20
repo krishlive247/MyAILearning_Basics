@@ -3,3 +3,33 @@ __pycache__/
 *.pyc
 .DS_Store
 .env
+cat > .gitignore << 'EOF'
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+.env.local
+
+# Project specific
+*.log
+.temp/
+EOF
+
+.github
