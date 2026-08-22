@@ -1,0 +1,38 @@
+---
+references:
+  - "File: /week2/scripts/main.py"
+generationTime: 2026-08-22T11:27:20.961Z
+---
+flowchart TD
+    A(["Program Starts"]) --> B{"Running as main module?"}
+    B -->|No| Z(["Program Exits"])
+    B -->|Yes| C["main()"]
+    C --> D["Print test banner"]
+    D --> E["try block"]
+
+    E --> F["test_embeddings()"]
+    F --> F1["Create SimilarityEngine"]
+    F1 --> F2["Define documents and query"]
+    F2 --> F3["Print embeddings success"]
+
+    F3 --> G["test_vector_db()"]
+    G --> G1["Create VectorStore"]
+    G1 --> G2["Add documents"]
+    G2 --> G3["Search for dogs"]
+    G3 --> G4["Print first result and success"]
+
+    G4 --> H["test_llm()"]
+    H --> H1["Create Ollama LLM via LLMFactory"]
+    H1 --> H2["Print LLM information and success"]
+
+    H2 --> I["test_rag()"]
+    I --> I1["Create RAGSystem with Ollama"]
+    I1 --> I2["Add documents"]
+    I2 --> I3["Generate answer"]
+    I3 --> I4["Print question, answer, and success"]
+
+    I4 --> J["Print all tests passed"]
+    J --> Z
+
+    E -.->|Any exception| K["Print error and traceback"]
+    K --> Z
